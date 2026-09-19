@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact — Abhishek S Bhairemane</title>
+    <link rel="preload" href="public/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="public/fonts/oswald-500.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="stylesheet" href="src/styles/app.css">
+    <link rel="stylesheet" href="src/styles/secondary.css">
+</head>
+
+<body>
+
+    <nav class="sp-nav">
+        <a class="sp-nav__mark" href="/">ABHISHEK</a>
+        <ul class="sp-nav__links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/work">Work</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/skills">Skills</a></li>
+            <li><a href="/contact" class="is-active">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="pg">
+        <a class="pg__back" href="/">← Back to Portfolio</a>
+        <p class="pg__tag">Get In Touch</p>
+        <h1 class="pg__h1">LET'S<br>CONNECT</h1>
+        <hr class="pg__rule">
+        <p class="pg__lead">I'm open to work opportunities, freelance projects, and exciting collaborations. Let's build
+            something great together.</p>
+
+        <div class="contact-grid">
+            <div>
+                <img class="contact-info__photo" src="public/abhishek1.jpg" alt="Abhishek S Bhairemane">
+
+                <div class="ci">
+                    <p class="ci__label">Email</p>
+                    <a class="ci__value" href="mailto:abhishek@iclonistech.com">abhishek@iclonistech.com</a>
+                </div>
+                <div class="ci">
+                    <p class="ci__label">Company</p>
+                    <a class="ci__value" href="https://iclonistech.com" target="_blank" rel="noopener">Iclonis Tech
+                        Solutions</a>
+                </div>
+                <div class="ci">
+                    <p class="ci__label">LinkedIn</p>
+                    <a class="ci__value" href="https://linkedin.com/in/abhishek-bhairemane" target="_blank"
+                        rel="noopener">linkedin.com/in/abhishek-bhairemane</a>
+                </div>
+                <div class="ci">
+                    <p class="ci__label">GitHub</p>
+                    <a class="ci__value" href="https://github.com/abhishek-bhairemane" target="_blank"
+                        rel="noopener">github.com/abhishek-bhairemane</a>
+                </div>
+                <div class="ci">
+                    <p class="ci__label">Location</p>
+                    <p class="ci__value">India 🇮🇳</p>
+                </div>
+                <div class="ci" style="border:none;padding:0">
+                    <p class="ci__label">Status</p>
+                    <p class="ci__value" style="color:#de1b1c">Open to Opportunities ✓</p>
+                </div>
+            </div>
+
+            <form class="cf" id="contactForm">
+                <div class="cf__field">
+                    <label class="cf__label" for="c-name">Your Name</label>
+                    <input class="cf__input" type="text" id="c-name" name="name" placeholder="John Doe" required>
+                </div>
+                <div class="cf__field">
+                    <label class="cf__label" for="c-email">Email Address</label>
+                    <input class="cf__input" type="email" id="c-email" name="email" placeholder="john@company.com"
+                        required>
+                </div>
+                <div class="cf__field">
+                    <label class="cf__label" for="c-phone">Phone (Optional)</label>
+                    <input class="cf__input" type="tel" id="c-phone" name="phone" placeholder="+91 00000 00000">
+                </div>
+                <div class="cf__field">
+                    <label class="cf__label" for="c-subject">Subject</label>
+                    <input class="cf__input" type="text" id="c-subject" name="subject"
+                        placeholder="Job Opportunity / Freelance / Collaboration">
+                </div>
+                <div class="cf__field">
+                    <label class="cf__label" for="c-msg">Message</label>
+                    <textarea class="cf__textarea" id="c-msg" name="message"
+                        placeholder="Tell me about your project or opportunity..." required></textarea>
+                </div>
+                <button class="cf__btn" type="submit">Send Message →</button>
+                <div class="cf__success" id="successMsg">Message Sent Successfully ✓</div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const btn = this.querySelector('.cf__btn');
+            const msg = document.getElementById('successMsg');
+            btn.textContent = 'Sending...';
+            btn.disabled = true;
+            setTimeout(() => {
+                btn.style.display = 'none';
+                msg.style.display = 'block';
+                this.reset();
+                setTimeout(() => {
+                    btn.style.display = '';
+                    btn.textContent = 'Send Message →';
+                    btn.disabled = false;
+                    msg.style.display = 'none';
+                }, 4000);
+            }, 1000);
+        });
+    </script>
+</body>
+
+</html>

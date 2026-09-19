@@ -1,0 +1,224 @@
+<!doctype html>
+<html lang="en" class="is-booting">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>ABHISHEK S BHAIREMANE — Junior Software Engineer</title>
+  <meta name="description"
+    content="Portfolio of Abhishek S Bhairemane — Junior Software Engineer at Iclonis Tech Solutions.">
+  <meta name="theme-color" content="#000000">
+  <link rel="preload" href="public/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="public/fonts/oswald-500.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="public/fonts/oswald-700.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="src/styles/app.css">
+  <link rel="stylesheet" href="src/styles/universe.css">
+  <link rel="stylesheet" href="src/styles/chrono.css">
+  <link rel="stylesheet" href="src/styles/projects.css">
+  <link rel="stylesheet" href="src/styles/finale.css">
+</head>
+
+<body>
+
+  <h1 class="sr-only">ABHISHEK S BHAIREMANE — Junior Software Engineer at Iclonis Tech Solutions. Welcome to my world.
+  </h1>
+
+  <div class="stage-wrap">
+    <canvas id="stage" aria-hidden="true"></canvas>
+
+    <header class="hdr" id="hdr">
+      <svg class="hdr__rule" id="hdrRule" aria-hidden="true" preserveAspectRatio="none">
+        <polyline id="hdrRulePath" fill="none" stroke="currentColor" stroke-width="1.25"
+          vector-effect="non-scaling-stroke" />
+      </svg>
+
+      <a class="hdr__mark" href="/" aria-label="Abhishek, home">
+        <span class="mark-word">ABHISHEK</span>
+      </a>
+
+      <span class="hdr__div" aria-hidden="true"></span>
+
+      <p class="hdr__roles">
+        <span>Developer</span><span>Engineer</span><span>Builder</span>
+      </p>
+
+      <!-- ✅ NO data-nav — clean links, no JS interception -->
+      <nav class="hdr__nav" aria-label="Primary">
+        <ul>
+          <li><a href="/" class="is-active" id="n-home">Home</a></li>
+          <li><a href="/work" id="n-work">Work</a></li>
+          <li><a href="/about" id="n-about">About</a></li>
+          <li><a href="/skills" id="n-skills">Skills</a></li>
+          <li><a href="/contact" id="n-contact">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="hdr__meta">
+        <span class="hdr__metaLabel">Portfolio — MMXXVI</span>
+        <span class="hdr__pips" aria-hidden="true"><i></i><i></i><i></i></span>
+      </div>
+
+      <button class="hdr__burger" id="burger" aria-expanded="false" aria-controls="hdrNavMobile">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+      </button>
+    </header>
+
+    <div class="furniture" aria-hidden="true">
+      <p class="welcome" id="welcome">
+        <b class="welcome__dots">•••</b>
+        <span class="welcome__text">Welcome to my world</span>
+        <b class="welcome__dots">•••</b>
+      </p>
+      <p class="chip chip--artist" id="chipArtist"><span>•Engineer Abhishek•</span></p>
+      <p class="chip chip--legend" id="chipLegend"><span>•Builder•</span></p>
+      <div class="arrows arrows--l" id="arrowsL"></div>
+      <div class="arrows arrows--r" id="arrowsR"></div>
+      <div class="grid-dots grid-dots--br" id="dotsBR"></div>
+    </div>
+
+    <!-- Mobile menu — also plain hrefs -->
+    <nav class="menu" id="menu" aria-label="Primary, expanded" hidden>
+      <ul>
+        <li><a href="/" class="is-active">Home</a></li>
+        <li><a href="/work">Work</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/skills">Skills</a></li>
+        <li><a href="/contact">Contact</a></li>
+      </ul>
+      <p class="menu__tag">••• Welcome to my world •••</p>
+    </nav>
+
+    <div class="boot" id="boot">
+      <div class="boot__bar"><i id="bootFill"></i></div>
+      <button class="boot__enter" id="bootEnter" hidden><span>Enter</span></button>
+    </div>
+
+    <noscript>
+      <div class="fallback">
+        <p>ABHISHEK</p>
+        <small>This opening is an animated experience. Please enable JavaScript.</small>
+      </div>
+    </noscript>
+  </div>
+
+  <main class="flow">
+    <div class="hero-spacer" aria-hidden="true"></div>
+
+    <section class="universe" id="universe" aria-labelledby="uniTitle">
+      <header class="universe__title" id="uniTitle">
+        <p class="universe__over">Scene 02</p>
+        <h2 class="universe__name">The Tech<br>Universe</h2>
+        <p class="universe__sub">Code · Ideas · Build · Impact</p>
+      </header>
+
+      <!-- CINEMATIC PHOTO MOTION — replaces video with animated photo sequence -->
+      <div id="photoFilm" aria-hidden="true" style="
+        position:absolute;inset:0;overflow:hidden;z-index:0;
+        background:#000;
+      ">
+        <!-- 5 frames cycle with Ken Burns effect + crossfade -->
+        <div class="pf-slide"
+          style="background-image:url('public/abhishek_hero.png');animation:kenburns1 8s ease-in-out infinite,slideSwap 40s 0s step-start infinite">
+        </div>
+        <div class="pf-slide"
+          style="background-image:url('public/abhishek_front.png');animation:kenburns2 8s ease-in-out infinite,slideSwap 40s -8s step-start infinite">
+        </div>
+        <div class="pf-slide"
+          style="background-image:url('public/abhishek1.jpg');animation:kenburns3 8s ease-in-out infinite,slideSwap 40s -16s step-start infinite">
+        </div>
+        <div class="pf-slide"
+          style="background-image:url('public/abhishek_side.png');animation:kenburns1 8s ease-in-out infinite,slideSwap 40s -24s step-start infinite">
+        </div>
+        <div class="pf-slide"
+          style="background-image:url('public/abhishek2.jpg');animation:kenburns2 8s ease-in-out infinite,slideSwap 40s -32s step-start infinite">
+        </div>
+        <!-- Cinematic overlays -->
+        <div
+          style="position:absolute;inset:0;background:linear-gradient(to top,#000 0%,rgba(0,0,0,.55) 40%,rgba(0,0,0,.2) 70%,rgba(0,0,0,.6) 100%);z-index:10">
+        </div>
+        <div
+          style="position:absolute;inset:0;background:radial-gradient(ellipse at center,transparent 35%,rgba(0,0,0,.7) 100%);z-index:11">
+        </div>
+        <!-- Red-accent side glow -->
+        <div
+          style="position:absolute;left:0;top:0;bottom:0;width:30%;background:linear-gradient(to right,rgba(222,27,28,.12),transparent);z-index:12">
+        </div>
+      </div>
+
+      <div class="universe__veil" id="uniVeil" aria-hidden="true"></div>
+    </section>
+
+    <section class="chrono" id="chrono" aria-labelledby="chronoTitle">
+      <div class="chrono__pin">
+        <canvas id="chronoStage" aria-hidden="true"></canvas>
+        <h2 class="chrono__title" id="chronoTitle">
+          <span>A</span><span>Journey</span><span>Through</span><span>Code</span>
+        </h2>
+        <p class="chrono__rail" aria-hidden="true">
+          <i></i>
+          <span>Ideas</span><span>Projects</span><span>Growth</span>
+          <span>Impact</span><span>Me</span>
+          <i></i>
+        </p>
+        <p class="chrono__hint" aria-hidden="true">Move<br>to travel<br>through time<i></i></p>
+        <p class="chrono__note chrono__note--bl" aria-hidden="true">Same<br>curiosity<br>a brighter<br>tomorrow</p>
+        <p class="chrono__note chrono__note--br" aria-hidden="true">Still<br>building<br>what's<br>next<i></i></p>
+        <div class="chrono__deck" id="chronoDeck"></div>
+        <canvas id="chronoFront" aria-hidden="true"></canvas>
+      </div>
+    </section>
+
+    <section class="gallery" id="gallery" aria-labelledby="galleryTitle">
+      <div class="gallery__pin">
+        <canvas id="galleryStage" aria-hidden="true"></canvas>
+        <div class="gallery__world">
+          <div class="gallery__deck" id="galleryDeck"></div>
+          <img class="gallery__person" id="galleryPerson" src="public/abhishek_hero.png" alt="Abhishek S Bhairemane"
+            draggable="false">
+        </div>
+        <h2 class="g-label g-label--projects" id="galleryTitle">Projects</h2>
+        <p class="g-label g-label--ideas" aria-hidden="true">Ideas<br>Code<br>Solutions<br><b>Real Impact</b></p>
+        <p class="g-label g-label--scroll" aria-hidden="true">Scroll<br>Explore<br>Interact</p>
+        <p class="g-label g-label--real" aria-hidden="true">Real<br>Projects<br>Real<br>Stories</p>
+        <p class="g-label g-label--tomorrow" aria-hidden="true">Building<br>A Brighter<br>Tomorrow</p>
+        <span class="g-label g-label--num" id="galleryNum" aria-hidden="true">01</span>
+      </div>
+    </section>
+  </main>
+
+  <footer class="fin" id="fin" aria-label="Closing">
+    <div class="fin__pin">
+      <h2 class="sr-only">Abhishek S Bhairemane</h2>
+      <div class="fin__stage1" id="finStage1">
+        <canvas id="finBack" aria-hidden="true"></canvas>
+        <canvas id="finMan" aria-hidden="true"></canvas>
+        <p class="f-cap f-cap--tl" aria-hidden="true">Ideas<br>Code<br>Solutions<br>Real Impact</p>
+        <blockquote class="f-cap f-cap--quote">&ldquo;Good<br>Code<br>Ships<br>Faster.&rdquo;</blockquote>
+        <p class="f-cap f-cap--blw" aria-hidden="true">A<br>Developer&rsquo;s<br>World</p>
+        <p class="f-cap f-cap--tr" aria-hidden="true">Same<br>Passion<br>A Brighter<br>Tomorrow</p>
+        <p class="f-cap f-cap--br" aria-hidden="true">Code<br>Build<br>Ship<br>Repeat</p>
+      </div>
+      <div class="fin__dim" id="finDim" aria-hidden="true"></div>
+      <figure class="fin__frame2" id="finFrame2" aria-hidden="true" hidden>
+        <img id="finFrame2Img" alt="" draggable="false" decoding="async">
+      </figure>
+      <div class="fin__bar">
+        <a href="/contact">Contact</a>
+        <nav class="fin__soc" aria-label="Social">
+          <a href="https://github.com/" rel="me" target="_blank">GitHub</a>
+          <a href="https://linkedin.com/in/" rel="me" target="_blank">LinkedIn</a>
+          <a href="https://iclonistech.com" rel="me" target="_blank">Iclonis Tech</a>
+        </nav>
+        <small class="fin__c">&copy; 2026 Abhishek S Bhairemane &mdash; All rights reserved</small>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="src/main.js"></script>
+
+  
+
+</body>
+
+</html>
