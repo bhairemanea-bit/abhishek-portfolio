@@ -1,4 +1,4 @@
-# GIREESH — cinematic portfolio
+# ABHISHEK S B — cinematic portfolio
 
 Two scenes so far, both WebGL, no frameworks and no build step.
 
