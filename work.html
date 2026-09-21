@@ -4,17 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Work — Abhishek S Bhairemane</title>
+    <title>Work — Abhishek S B</title>
     <link rel="preload" href="public/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="public/fonts/oswald-500.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="src/styles/app.css">
     <link rel="stylesheet" href="src/styles/secondary.css">
+    <link rel="icon" type="image/png" href="public/favicon.png">
 </head>
 
 <body>
 
     <nav class="sp-nav">
-        <a class="sp-nav__mark" href="/">ABHISHEK</a>
+        <a class="sp-nav__mark" href="/" style="display:flex; align-items:center; gap:10px;"><img
+                src="public/ASB_LOGO.png" alt="ASB Logo"
+                style="height: 38px; width: auto; object-fit: contain;">ABHISHEK S B</a>
         <ul class="sp-nav__links">
             <li><a href="/">Home</a></li>
             <li><a href="/work" class="is-active">Work</a></li>
@@ -23,6 +26,23 @@
             <li><a href="/contact">Contact</a></li>
         </ul>
     </nav>
+
+    <!-- Mobile menu -->
+    <nav class="menu" id="menu" aria-label="Primary, expanded" hidden>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/work">Work</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/skills">Skills</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <p class="menu__tag">••• Welcome to my world •••</p>
+    </nav>
+    <button class="hdr__burger mobile-secondary-burger" id="burger" aria-expanded="false" aria-controls="hdrNavMobile">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+    </button>
+
 
     <div class="pg">
         <a class="pg__back" href="/">← Back to Portfolio</a>
@@ -34,118 +54,145 @@
 
         <div class="work-grid">
             <div class="work-card">
-                <p class="work-card__num">01 — Featured</p>
-                <h2 class="work-card__title">Vijay Diagnostics Platform</h2>
-                <p class="work-card__desc">Full-stack diagnostic centre platform with dynamic content management,
-                    patient booking, admin portal with full CRUD, Google reCAPTCHA v3, and Cloudinary integration. Fully
-                    responsive across all devices.</p>
+                <img class="work-card__img" src="public/projects/iclonis_tech.png" alt="Iclonis Tech Solutions Portal">
+                <p class="work-card__num">01 — Professional</p>
+                <h2 class="work-card__title">Iclonis Tech Solutions Portal</h2>
+                <p class="work-card__desc">Developed a web-based portal for generating internship certificates and offer
+                    letters. Implemented intern/employee data management and automated workflows. Built REST APIs using
+                    FastAPI and a React frontend. Designed database operations using MySQL. Integrated Cloudinary for
+                    media management.</p>
                 <div class="work-card__tags">
                     <span class="work-card__tag">React</span>
                     <span class="work-card__tag">FastAPI</span>
-                    <span class="work-card__tag">MySQL</span>
                     <span class="work-card__tag">Python</span>
+                    <span class="work-card__tag">MySQL</span>
                     <span class="work-card__tag">Cloudinary</span>
                 </div>
             </div>
 
             <div class="work-card">
-                <p class="work-card__num">02</p>
-                <h2 class="work-card__title">Iclonis Tech Solutions Portal</h2>
-                <p class="work-card__desc">Corporate platform for Iclonis Tech Solutions. ASP.NET Core 9 application
-                    with database initialisation, seeded admin data, full portal, and production deployment setup.</p>
-                <div class="work-card__tags">
-                    <span class="work-card__tag">ASP.NET Core 9</span>
-                    <span class="work-card__tag">C#</span>
-                    <span class="work-card__tag">MySQL</span>
-                    <span class="work-card__tag">EF Core</span>
-                </div>
-            </div>
-
-            <div class="work-card">
-                <p class="work-card__num">03</p>
+                <img class="work-card__img" src="public/projects/healthcare.png" alt="BioLab 2.0 Platform">
+                <p class="work-card__num">02 — Professional</p>
                 <h2 class="work-card__title">BioLab 2.0 Platform</h2>
-                <p class="work-card__desc">Medical laboratory management system with Profile, Package, and Employee
-                    master modules. Full CRUD infrastructure with robust input validation, multi-tenant capable
-                    architecture.</p>
+                <p class="work-card__desc">Developed a medical lab management platform with Profile, Package, and
+                    Employee modules. Developed full CRUD operations with business logic and REST API integration.
+                    Designed a multi-tenant architecture to support multiple laboratory organizations.</p>
                 <div class="work-card__tags">
                     <span class="work-card__tag">ASP.NET MVC</span>
+                    <span class="work-card__tag">C#</span>
                     <span class="work-card__tag">REST API</span>
                     <span class="work-card__tag">SQL Server</span>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <img class="work-card__img" src="public/projects/healthcare.png" alt="Client Healthcare & Lab Websites">
+                <p class="work-card__num">03 — Professional</p>
+                <h2 class="work-card__title">Client Healthcare & Lab Websites</h2>
+                <p class="work-card__desc">Developed three client websites in the healthcare and laboratory domain,
+                    translating requirements into responsive web applications. Implemented frontend interfaces, backend
+                    integration, database connectivity, and client-specific workflows.</p>
+                <div class="work-card__tags">
+                    <span class="work-card__tag">Web Technologies</span>
+                    <span class="work-card__tag">Backend APIs</span>
+                    <span class="work-card__tag">SQL</span>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <img class="work-card__img" src="public/projects/pdf_report.png" alt="PDF Report / Letterhead Portal">
+                <p class="work-card__num">04 — Professional</p>
+                <h2 class="work-card__title">PDF Report / Letterhead Portal</h2>
+                <p class="work-card__desc">Developed a PDF-based portal for generating laboratory reports using the
+                    client's official letterhead. Implemented structured data entry to simplify workflows and automated
+                    the creation of professional PDF documents from stored data.</p>
+                <div class="work-card__tags">
+                    <span class="work-card__tag">Web Application</span>
+                    <span class="work-card__tag">PDF Generation</span>
+                    <span class="work-card__tag">Database Integration</span>
+                </div>
+            </div>
+
+            <div class="work-card">
+                <img class="work-card__img" src="public/projects/iclonis_tech.png" alt="Diagnokart Project">
+                <p class="work-card__num">05 — Current Focus</p>
+                <h2 class="work-card__title">Diagnokart Project</h2>
+                <p class="work-card__desc">Currently developing application functionality at Iclonis Tech Solutions.
+                    Working with ASP.NET, MySQL, and REST APIs. Using Swagger for API documentation/testing.
+                    Contributing to backend features, database integration, and business requirements.</p>
+                <div class="work-card__tags">
+                    <span class="work-card__tag">ASP.NET</span>
                     <span class="work-card__tag">C#</span>
-                </div>
-            </div>
-
-            <div class="work-card">
-                <p class="work-card__num">04</p>
-                <h2 class="work-card__title">Internship Management System</h2>
-                <p class="work-card__desc">End-to-end internship portal with native PDF certificate generation using
-                    ReportLab, branded HTML email templates, and WhatsApp deep-link sharing for instant document
-                    delivery.</p>
-                <div class="work-card__tags">
-                    <span class="work-card__tag">React</span>
-                    <span class="work-card__tag">FastAPI</span>
-                    <span class="work-card__tag">ReportLab</span>
-                    <span class="work-card__tag">SMTP</span>
-                    <span class="work-card__tag">WhatsApp API</span>
-                </div>
-            </div>
-
-            <div class="work-card">
-                <p class="work-card__num">05</p>
-                <h2 class="work-card__title">Admin CRM Dashboard</h2>
-                <p class="work-card__desc">Mobile-responsive admin portal with Cloudinary image upload, Blog Insights
-                    module, full CRM data management, branding integration, and complete mobile/tablet/laptop
-                    responsiveness.</p>
-                <div class="work-card__tags">
-                    <span class="work-card__tag">React</span>
-                    <span class="work-card__tag">Cloudinary</span>
-                    <span class="work-card__tag">REST API</span>
-                    <span class="work-card__tag">CSS</span>
-                </div>
-            </div>
-
-            <div class="work-card">
-                <p class="work-card__num">06</p>
-                <h2 class="work-card__title">Multi-Tenant SaaS Engine</h2>
-                <p class="work-card__desc">Database-per-tenant architecture with dynamic scoped connection factory
-                    routing on JWT claims. Version-controlled script-based migration engine ensuring consistent schema
-                    across all tenant databases.</p>
-                <div class="work-card__tags">
-                    <span class="work-card__tag">ASP.NET Core</span>
-                    <span class="work-card__tag">JWT Auth</span>
                     <span class="work-card__tag">MySQL</span>
-                    <span class="work-card__tag">Multi-Tenant</span>
+                    <span class="work-card__tag">Swagger API</span>
                 </div>
             </div>
 
             <div class="work-card">
-                <p class="work-card__num">07</p>
-                <h2 class="work-card__title">Email Automation Infrastructure</h2>
-                <p class="work-card__desc">SMTP-based email automation with professional branded HTML templates for
-                    offers, certificates and referrals. Auto-responders to users and admin lead notifications.</p>
+                <img class="work-card__img" src="public/projects/iclonis_tech.png" alt="Real Estate Management System">
+                <p class="work-card__num">06 — College Project</p>
+                <h2 class="work-card__title">Real Estate Management System</h2>
+                <p class="work-card__desc">Developed a real estate web application managing property-related data. Built
+                    backend functionality using Django and integrated SQL database operations. Crafted intuitive
+                    frontend workflows to organize and display real estate information efficiently.</p>
                 <div class="work-card__tags">
+                    <span class="work-card__tag">Django</span>
                     <span class="work-card__tag">Python</span>
-                    <span class="work-card__tag">SMTP</span>
-                    <span class="work-card__tag">HTML Email</span>
-                    <span class="work-card__tag">FastAPI</span>
-                </div>
-            </div>
-
-            <div class="work-card">
-                <p class="work-card__num">08</p>
-                <h2 class="work-card__title">TeamCA Portfolio Website</h2>
-                <p class="work-card__desc">Modern agency portfolio with SEO optimisation for teamca.in domain. Dynamic
-                    backend-driven content, mobile layout fixes, Google Translate compatibility, and full API fallbacks.
-                </p>
-                <div class="work-card__tags">
-                    <span class="work-card__tag">React</span>
-                    <span class="work-card__tag">Vite</span>
-                    <span class="work-card__tag">FastAPI</span>
-                    <span class="work-card__tag">SEO</span>
+                    <span class="work-card__tag">SQL</span>
+                    <span class="work-card__tag">HTML/CSS</span>
+                    <span class="work-card__tag">JavaScript</span>
                 </div>
             </div>
         </div>
     </div>
+
+    <footer class="sp-footer">
+        <a href="/contact">Contact</a>
+        <nav class="fin__soc" aria-label="Social">
+            <a href="https://github.com/bhairemanea-bit" rel="me" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/abhishek-bhairemane-a8189724a/" rel="me" target="_blank">LinkedIn</a>
+            <a href="https://iclonis.com/" rel="me" target="_blank">Iclonis Tech</a>
+        </nav>
+        <small class="fin__c">&copy; 2026 Abhishek S B &mdash; All rights reserved</small>
+    </footer>
+
+    <style>
+        .mobile-secondary-burger {
+            position: fixed !important;
+            top: 14px !important;
+            right: 18px !important;
+            z-index: 2000 !important;
+        }
+
+        @media (min-width: 900px) {
+            .mobile-secondary-burger {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .sp-nav__links {
+                display: none !important;
+            }
+        }
+    </style>
+    <script>
+        const root = document.documentElement;
+        const burger = document.getElementById('burger');
+        const menu = document.getElementById('menu');
+        if (menu && burger) {
+            menu.querySelectorAll('a').forEach((a, i) => a.style.setProperty('--i', i));
+            function setMenu(open) {
+                burger.setAttribute('aria-expanded', String(open));
+                root.classList.toggle('is-menu', open);
+                if (open) menu.hidden = false;
+                else setTimeout(() => { if (!root.classList.contains('is-menu')) menu.hidden = true; }, 500);
+            }
+            burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
+            menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+        }
+    </script>
+
 </body>
 
 </html>

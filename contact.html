@@ -4,17 +4,21 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Contact — Abhishek S Bhairemane</title>
+    <title>Contact — Abhishek S B</title>
     <link rel="preload" href="public/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="public/fonts/oswald-500.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="src/styles/app.css">
     <link rel="stylesheet" href="src/styles/secondary.css">
+    <link rel="icon" type="image/png" href="public/favicon.png">
 </head>
 
 <body>
 
     <nav class="sp-nav">
-        <a class="sp-nav__mark" href="/">ABHISHEK</a>
+        <a class="sp-nav__mark" href="/" style="display:flex; align-items:center; gap:10px;"><img
+                src="public/ASB_LOGO.png" alt="ASB Logo"
+                style="height: 38px; width: auto; object-fit: contain;">ABHISHEK S B</a>
+
         <ul class="sp-nav__links">
             <li><a href="/">Home</a></li>
             <li><a href="/work">Work</a></li>
@@ -23,6 +27,23 @@
             <li><a href="/contact" class="is-active">Contact</a></li>
         </ul>
     </nav>
+
+    <!-- Mobile menu -->
+    <nav class="menu" id="menu" aria-label="Primary, expanded" hidden>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/work">Work</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/skills">Skills</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <p class="menu__tag">••• Welcome to my world •••</p>
+    </nav>
+    <button class="hdr__burger mobile-secondary-burger" id="burger" aria-expanded="false" aria-controls="hdrNavMobile">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+    </button>
+
 
     <div class="pg">
         <a class="pg__back" href="/">← Back to Portfolio</a>
@@ -34,11 +55,11 @@
 
         <div class="contact-grid">
             <div>
-                <img class="contact-info__photo" src="public/abhishek1.jpg" alt="Abhishek S Bhairemane">
+                <img class="contact-info__photo" src="public/abhishek1.png" Abhishek S B">
 
                 <div class="ci">
                     <p class="ci__label">Email</p>
-                    <a class="ci__value" href="mailto:abhishek@iclonistech.com">abhishek@iclonistech.com</a>
+                    <a class="ci__value" href="mailto:contact@yourdomain.com">contact@yourdomain.com</a>
                 </div>
                 <div class="ci">
                     <p class="ci__label">Company</p>
@@ -66,9 +87,12 @@
             </div>
 
             <form class="cf" id="contactForm">
+                <input type="hidden" name="access_key" value="8d876754-98a0-4a17-97a1-146afea208cf">
+                <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+                <input type="hidden" name="subject" value="New Contact Form Submission - Abhishek Portfolio">
                 <div class="cf__field">
                     <label class="cf__label" for="c-name">Your Name</label>
-                    <input class="cf__input" type="text" id="c-name" name="name" placeholder="John Doe" required>
+                    <input class="cf__input" type="text" id="c-name" name="name" placeholder="Abhishek S B" required>
                 </div>
                 <div class="cf__field">
                     <label class="cf__label" for="c-email">Email Address</label>
@@ -95,26 +119,104 @@
         </div>
     </div>
 
+    <footer class="sp-footer">
+        <a href="/contact">Contact</a>
+        <nav class="fin__soc" aria-label="Social">
+            <a href="https://github.com/bhairemanea-bit" rel="me" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/abhishek-bhairemane-a8189724a/" rel="me" target="_blank">LinkedIn</a>
+            <a href="https://iclonis.com/" rel="me" target="_blank">Iclonis Tech</a>
+        </nav>
+        <small class="fin__c">&copy; 2026 Abhishek S B &mdash; All rights reserved</small>
+    </footer>
+
     <script>
         document.getElementById('contactForm').addEventListener('submit', function (e) {
             e.preventDefault();
             const btn = this.querySelector('.cf__btn');
             const msg = document.getElementById('successMsg');
+
+            const formData = new FormData(this);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+
             btn.textContent = 'Sending...';
             btn.disabled = true;
-            setTimeout(() => {
-                btn.style.display = 'none';
-                msg.style.display = 'block';
-                this.reset();
-                setTimeout(() => {
-                    btn.style.display = '';
-                    btn.textContent = 'Send Message →';
-                    btn.disabled = false;
-                    msg.style.display = 'none';
-                }, 4000);
-            }, 1000);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+                .then(async (response) => {
+                    if (response.status == 200) {
+                        btn.style.display = 'none';
+                        msg.textContent = 'Message Sent Successfully ✓';
+                        msg.style.display = 'block';
+                        this.reset();
+                    } else {
+                        console.log(response);
+                        throw new Error('Failed');
+                    }
+                })
+                .catch(error => {
+                    console.log(error);
+                    btn.style.display = 'none';
+                    msg.textContent = 'Something went wrong. Try again.';
+                    msg.style.color = '#de1b1c';
+                    msg.style.display = 'block';
+                })
+                .then(() => {
+                    setTimeout(() => {
+                        btn.style.display = '';
+                        btn.textContent = 'Send Message →';
+                        btn.disabled = false;
+                        msg.style.display = 'none';
+                        msg.style.color = '';
+                    }, 4000);
+                });
         });
     </script>
+
+    <style>
+        .mobile-secondary-burger {
+            position: fixed !important;
+            top: 14px !important;
+            right: 18px !important;
+            z-index: 2000 !important;
+        }
+
+        @media (min-width: 900px) {
+            .mobile-secondary-burger {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .sp-nav__links {
+                display: none !important;
+            }
+        }
+    </style>
+    <script>
+        const root = document.documentElement;
+        const burger = document.getElementById('burger');
+        const menu = document.getElementById('menu');
+        if (menu && burger) {
+            menu.querySelectorAll('a').forEach((a, i) => a.style.setProperty('--i', i));
+            function setMenu(open) {
+                burger.setAttribute('aria-expanded', String(open));
+                root.classList.toggle('is-menu', open);
+                if (open) menu.hidden = false;
+                else setTimeout(() => { if (!root.classList.contains('is-menu')) menu.hidden = true; }, 500);
+            }
+            burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
+            menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+        }
+    </script>
+
 </body>
 
 </html>

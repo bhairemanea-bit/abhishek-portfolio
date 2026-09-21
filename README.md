@@ -3,7 +3,7 @@
 Two scenes so far, both WebGL, no frameworks and no build step.
 
 **Scene 1 — the opening.** Black screen → the man walks out of the dark → the
-GIREESH wordmark materialises behind him → chips, arrows and dots snap into
+ABHISHEK S B wordmark materialises behind him → chips, arrows and dots snap into
 place → header draws itself in → the composition settles and breathes.
 
 **Scene 2 — the creative universe.** The supplied film, played as the section:
@@ -227,7 +227,7 @@ his shoulders, the two green closers at his feet.
 
 ## The finale: how it is put together
 
-The closing shot IS the reference (`Footer image.jpg`), split into breathing
+The closing shot IS the reference (`Footer image.png`), split into breathing
 layers by `tools/extract_fin.py`: the smoking man is GrabCut-matted out of
 the artwork (his pose, grade, rim and cigarette are the reference's own
 pixels — the drifting smoke deliberately stays with the background), and

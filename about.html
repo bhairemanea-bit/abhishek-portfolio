@@ -4,19 +4,22 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>About — Abhishek S Bhairemane</title>
+    <title>About — Abhishek S B</title>
     <meta name="description"
-        content="About Abhishek S Bhairemane — Junior Software Engineer at Iclonis Tech Solutions.">
+        content="About Abhishek S B — Junior Software Engineer at Iclonis Tech Solutions.">
     <link rel="preload" href="public/fonts/anton-400.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="preload" href="public/fonts/oswald-500.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="src/styles/app.css">
     <link rel="stylesheet" href="src/styles/secondary.css">
+    <link rel="icon" type="image/png" href="public/favicon.png">
 </head>
 
 <body>
 
     <nav class="sp-nav">
-        <a class="sp-nav__mark" href="/">ABHISHEK</a>
+        <a class="sp-nav__mark" href="/" style="display:flex; align-items:center; gap:10px;"><img
+                src="public/ASB_LOGO.png" alt="ASB Logo"
+                style="height: 38px; width: auto; object-fit: contain;">ABHISHEK S B</a>
         <ul class="sp-nav__links">
             <li><a href="/">Home</a></li>
             <li><a href="/work">Work</a></li>
@@ -26,6 +29,23 @@
         </ul>
     </nav>
 
+    <!-- Mobile menu -->
+    <nav class="menu" id="menu" aria-label="Primary, expanded" hidden>
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/work">Work</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/skills">Skills</a></li>
+            <li><a href="/contact">Contact</a></li>
+        </ul>
+        <p class="menu__tag">••• Welcome to my world •••</p>
+    </nav>
+    <button class="hdr__burger mobile-secondary-burger" id="burger" aria-expanded="false" aria-controls="hdrNavMobile">
+        <span aria-hidden="true"></span><span aria-hidden="true"></span>
+        <span class="sr-only">Menu</span>
+    </button>
+
+
     <div class="pg">
         <a class="pg__back" href="/">← Back to Portfolio</a>
         <p class="pg__tag">About Me</p>
@@ -34,7 +54,7 @@
 
         <div class="about-grid">
             <div class="about-photo">
-                <img src="public/abhishek_front.png" alt="Abhishek S Bhairemane — Junior Software Engineer">
+                <img src="public/abhishek_front.png" alt="Abhishek S B — Junior Software Engineer">
             </div>
             <div>
                 <p class="about-bio">
@@ -51,7 +71,7 @@
 
                 <div class="about-info__item">
                     <p class="about-info__label">Full Name</p>
-                    <p class="about-info__value">Abhishek S Bhairemane</p>
+                    <p class="about-info__value">Abhishek S B</p>
                 </div>
                 <div class="about-info__item">
                     <p class="about-info__label">Current Role</p>
@@ -76,6 +96,54 @@
             </div>
         </div>
     </div>
+
+    <footer class="sp-footer">
+        <a href="/contact">Contact</a>
+        <nav class="fin__soc" aria-label="Social">
+            <a href="https://github.com/bhairemanea-bit" rel="me" target="_blank">GitHub</a>
+            <a href="https://www.linkedin.com/in/abhishek-bhairemane-a8189724a/" rel="me" target="_blank">LinkedIn</a>
+            <a href="" rel="me" target="_blank">Iclonis Tech</a>
+        </nav>
+        <small class="fin__c">&copy; 2026 Abhishek S B &mdash; All rights reserved</small>
+    </footer>
+
+    <style>
+        .mobile-secondary-burger {
+            position: fixed !important;
+            top: 14px !important;
+            right: 18px !important;
+            z-index: 2000 !important;
+        }
+
+        @media (min-width: 900px) {
+            .mobile-secondary-burger {
+                display: none !important;
+            }
+        }
+
+        @media (max-width: 900px) {
+            .sp-nav__links {
+                display: none !important;
+            }
+        }
+    </style>
+    <script>
+        const root = document.documentElement;
+        const burger = document.getElementById('burger');
+        const menu = document.getElementById('menu');
+        if (menu && burger) {
+            menu.querySelectorAll('a').forEach((a, i) => a.style.setProperty('--i', i));
+            function setMenu(open) {
+                burger.setAttribute('aria-expanded', String(open));
+                root.classList.toggle('is-menu', open);
+                if (open) menu.hidden = false;
+                else setTimeout(() => { if (!root.classList.contains('is-menu')) menu.hidden = true; }, 500);
+            }
+            burger.addEventListener('click', () => setMenu(burger.getAttribute('aria-expanded') !== 'true'));
+            menu.addEventListener('click', (e) => { if (e.target.closest('a')) setMenu(false); });
+        }
+    </script>
+
 </body>
 
 </html>
